@@ -1,0 +1,89 @@
+html{
+    font-size: 62.5%; 
+/* 16px * 62,5 10.00rem */
+}
+body{
+  font: 1.6rem sans-serif;
+  line-height: 1.6;
+  margin: 0;
+}
+@font-face {
+    font-family: "roadRage";
+    src: url(../font/Azedo-Light.otf);
+}
+:root{
+    --color-font: #FD972D;
+    --color-background: #15313C; 
+    --color-backBox: #E1D2B3; 
+    --color-fontBox: #BFA765;
+    --color-fontBox2: #3a351f;
+}
+*{
+    box-sizing: border-box; /* 100px largeur + 10px padding + 1px border */
+}
+ul, 
+ol, 
+p,
+button,
+figure, 
+blockquote, h1, h2, h3, address{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    list-style: none;
+    font-style: normal;
+}
+
+/* CSS */
+
+header h1{
+    font-family: "roadRage";
+    font-size: 6rem;
+    color: var(--color-font);
+    text-align: center;
+}
+
+body{
+    background-color: var(--color-background);
+}
+
+.vedette{
+    margin: 0 auto;
+    display: block;
+    width: 70%;
+    /* background-color: aliceblue;
+    opacity: 50%; */
+}
+
+.affiche{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 0.5rem;
+    /* padding-bottom: 5rem; */
+}
+
+img{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    object-fit: cover;
+}
+
+.form{
+    margin: 0 auto;
+    display: block;
+    width: 70%;
+    border: .1rem solid rgb(34, 34, 34);
+    margin-top: 5rem;
+    background-color: var(--color-backBox);
+}
+.form input, .form select{
+    width: 100%;
+    height: 4rem;
+    margin-bottom: 1.7rem;
+}
+.form label{
+    color: var(--color-fontBox2);
+    font-weight: bold;
+}
