@@ -133,13 +133,6 @@ img:hover{
     grid-template-columns: repeat(4,1fr);
     grid-gap: 0.5rem;
 }
-.grid-picture-large img{
-    display: block;
-}
-.film p{
-    text-align: center;
-    padding: 1rem;
-}
 .entete{
     margin: 0 auto 2rem;
     display: block;
@@ -159,16 +152,19 @@ img:hover{
     /* background-color: aliceblue;
     opacity: 50%; */
 }
-.film p{
-    background-color: aliceblue;
-    opacity: 50%;
 
-}
 header h1{
     font-family: "roadRage";
     font-size: 6rem;
     color: var(--color-font);
     text-align: center;
+    content: "";
+    position: relative;
+}
+
+.logo{
+    max-width: 10rem;
+    float: left;
 }
 
 section button{
@@ -176,11 +172,9 @@ section button{
     display: block;
     border: none;
     border: .1rem solid black;
-    padding: 1.5rem;
+    padding: 2rem;
     margin: 1rem auto;
-    background-color: aliceblue;
-    opacity: 50%;
-    font-family: "roadRage";
+    background-color: var(--color-backBox);
 }
 
 @media screen and (min-width:60rem){

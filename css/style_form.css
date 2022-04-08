@@ -87,3 +87,23 @@ img{
     color: var(--color-fontBox2);
     font-weight: bold;
 }
+
+.logo{
+    max-width: 10rem;
+    float: left;
+}
+
+header h1::before{
+    content: "";
+    position: relative;
+}
+
+section button{
+    cursor: pointer;
+    display: block;
+    border: none;
+    border: .1rem solid black;
+    padding: 2rem;
+    margin: 1rem auto;
+    background-color: var(--color-backBox);
+}
