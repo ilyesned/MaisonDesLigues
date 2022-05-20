@@ -37,4 +37,21 @@ document.addEventListener("DOMContentLoaded", e => {
         modal.classList.remove("modale-active");
         body.style = "overflow: scroll";
     });
+
+
+
+    function actualhour() {
+        let date = new Date();
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let seconds = date.getSeconds();
+        let day = date.getDay();
+        let month = date.getMonth();
+        let year = date.getFullYear();
+        let actualhour = `${hours}h${minutes}m${seconds}s`;
+        let actualday = `${day}/${month}/${year}`;
+        document.querySelector(".actualhour").innerText = actualhour;
+        document.querySelector(".actualday").innerText = actualday;
+    }
+
 });
