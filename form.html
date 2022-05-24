@@ -18,28 +18,45 @@
                 <li><img src="https://fr.web.img4.acsta.net/pictures/14/10/08/11/49/255061.jpg"  alt=""></li>
                 <li><img src="https://m.media-amazon.com/images/I/91wc7yc2R8L._AC_SL1500_.jpg"  alt=""></li>
                 <li><img src="https://fr.web.img3.acsta.net/medias/nmedia/00/02/53/34/affiche.jpg"  alt=""></li>
-                <li><img src="https://m.media-amazon.com/images/I/71zA+8tEFPL._AC_SY606_.jpg" alt=""></li>
+                <!-- <li><img src="./asset/salto_ufc.gif" alt=""></li> -->
+                <li><video width="auto" height="400" autoplay>
+                    <source src="./asset/salto_ufc.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video></li>
             </ul>
         </section>
         <fieldset class="form">
             <!-- A faire -->
             <label for="name">Nom</label>
-            <input type="text" name="name" id="">
+            <input type="text" name="name" id="name">
             <label for="firstname">Prénom</label>
-            <input type="text" name="firstname" id="">
+            <input type="text" name="firstname" id="firstname">
             <label for="email">Email</label>
-            <input type="text" name="email" id="">
-            <label for="city">Ville</label>
-            <select name="city" id="">
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
+            <input type="email" name="email" id="email">
+            <label for="email">N° de téléphone</label>
+            <input type="tel" name="phone" id="phone" pattern="^0[1-9]{1}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}">
+            <label for="preference">Quelle catégorie préférez-vous ?</label>
+            <select name="preference" id="preference">
+                <option value="">Poids Mouches (flyweight)</option>
+                <option value="">Poids Coqs (bantamweight)</option>
+                <option value="">Poids Plumes (featherweight)</option>
+                <option value="">Poids Légers (lightweight)</option>
+                <option value="">Poids Mi-Moyens (welterweight)</option>
+                <option value="">Poids Moyens (middleweight)</option>
+                <option value="">Poids Mi-Lourds (light heavyweight	)</option>
+                <option value="">Poids Lourds (heavyweight)</option>
             </select>
-            <label for="country">Pays</label>
-            <select name="country" id="">
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
+            <!-- <label for="country">Pays</label>
+            <select name="country" id="country">
+                <option value="france">France</option>
+                <option value="italie">Italie</option>
+                <option value="algerie">Algérie</option>
+            </select> -->
+            <label for="city">Ville</label>
+            <select name="city" id="city">
+                <option value="paris">Paris</option>
+                <option value="milan">Milan</option>
+                <option value="Alger">Alger</option>
             </select>
         </fieldset>
         <section>
