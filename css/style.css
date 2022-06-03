@@ -140,6 +140,7 @@ img:hover{
     border: .1rem solid rgb(34, 34, 34);
     padding: 1rem;
     background-color: var(--color-backBox);
+    border-radius: 1rem;
 }
 .entete h2{
     color: var(--color-fontBox);
@@ -151,6 +152,15 @@ img:hover{
     border: .1rem solid rgb(34, 34, 34);
     /* background-color: aliceblue;
     opacity: 50%; */
+}
+
+header{
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--color-backBox);
+    margin-bottom: 5rem;
 }
 
 header h1{
@@ -177,14 +187,131 @@ section button{
     background-color: var(--color-backBox);
 }
 
-@media screen and (min-width:60rem){
-    
-    .main{
-        width: 100%;
-        display: block;
-        padding: 2rem;
-        margin: 0 auto;
+.menu{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-gap: 1rem;
+    justify-content: center;
+    padding: 1rem;
+    background-color: var(--color-backBox);
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+.menu li{
+    list-style: none;
+    display: grid;
+    grid-gap: 0.5rem;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--color-font);
+    background-color: var(--color-backBox);
+    width: 50%;
+}
+
+.connexion {
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60rem;
+    border: none;
+    padding: 2rem;
+    background-color: var(--color-backBox);
+    border-radius: 1rem;
+}
+
+.connexion * {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin: 0 auto;
+    border: none;
+    background-color: var(--color-backBox);
+    border-radius: 1rem;
+}
+
+.connexion button{
+    cursor: pointer;
+    display: block;
+    width: 60%;
+    border: none;
+    border: .1rem solid black;
+    padding: 1rem;
+    margin-top: 2rem;
+    background-color: var(--color-backBox);
+}
+
+.connexion button:hover{
+    background-color: var(--color-fontBox);
+    color: var(--color-background);
+}
+
+.table_user{
+    text-align: left;
+}
+
+.table_user th, .table_user td{
+    background-color: var(--color-backBox);
+    color: var(--color-background);
+    padding-left: 3rem;
+}
+
+/*FOOTER*/
+
+.footer_navigation{
+    background-color: var(--color-backBox);
+    padding: 1rem;
+    margin-top: 5rem;
+}
+
+.navigation_footer{
+    display: grid;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 1rem;
+    justify-content: center;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    max-width: 25rem;
+    background-color: var(--color-backBox);
+    margin: 0 auto;
+}
+
+.navigation_footer img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+}
+
+
+
+
+
+@media screen and (max-width: 768px){
+    header h1{
+        font-size: 4rem;
     }
-    
-    
+    .entete{
+        width: 100%;
+    }
+    .film{
+        width: 100%;
+    }
+    .connexion{
+        width: 100%;
+    }
+    .connexion button{
+        width: 100%;
+    }
+    .table_user{
+        width: 100%;
+    }
 }

@@ -1,3 +1,6 @@
+<?php 
+    include_once "./src/connexion_bdd.inc.php";
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -9,7 +12,7 @@
 </head>
 <body>
     <header>
-        <a href="index.html"><img class="logo" src="./asset/8d6074851b4ded8fe9fc46e294bbff5f - Copie.png" alt=""></a>
+        <a href="index.php"><img class="logo" src="./asset/8d6074851b4ded8fe9fc46e294bbff5f - Copie.png" alt="bouton-acceuil"></a>
         <h1>Films series TV et bien plus en illimite</h1>
     </header>
     <main>
@@ -22,43 +25,42 @@
                 <!-- <li><img src="./asset/salto_ufc.gif" alt=""></li> -->
             </ul>
         </section>
-        <fieldset class="form">
+        <form class="form" action="#" method="post">
             <!-- A faire -->
-            <label for="name">Nom</label>
-            <input type="text" name="name" id="name">
+            <label for="names">Nom</label>
+            <input type="text" name="names" id="names">
             <label for="firstname">Prénom</label>
             <input type="text" name="firstname" id="firstname">
             <label for="email">Email</label>
             <input type="email" name="email" id="email">
-            <label for="email">N° de téléphone</label>
-            <input type="tel" name="phone" id="phone" pattern="^0[1-9]{1}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}">
+            <label for="passwords">Mot de passe</label>
+            <input type="password" name="passwords" id="passwords">
+            <label for="phone">N° de téléphone</label>
+            <input type="tel" name="phone" id="phone">
             <label for="preference">Quelle catégorie préférez-vous ?</label>
             <select name="preference" id="preference">
-                <option value="">Poids Mouches (flyweight)</option>
-                <option value="">Poids Coqs (bantamweight)</option>
-                <option value="">Poids Plumes (featherweight)</option>
-                <option value="">Poids Légers (lightweight)</option>
-                <option value="">Poids Mi-Moyens (welterweight)</option>
-                <option value="">Poids Moyens (middleweight)</option>
-                <option value="">Poids Mi-Lourds (light heavyweight	)</option>
-                <option value="">Poids Lourds (heavyweight)</option>
+                <option value="Poids Mouches (flyweight)">Poids Mouches (flyweight)</option>
+                <option value="Poids Coqs (bantamweight)">Poids Coqs (bantamweight)</option>
+                <option value="Poids Plumes (featherweight)">Poids Plumes (featherweight)</option>
+                <option value="Poids Légers (lightweight)">Poids Légers (lightweight)</option>
+                <option value="Poids Mi-Moyens (welterweight)">Poids Mi-Moyens (welterweight)</option>
+                <option value="Poids Moyens (middleweight)">Poids Moyens (middleweight)</option>
+                <option value="Poids Mi-Lourds (light heavyweight)">Poids Mi-Lourds (light heavyweight)</option>
+                <option value="Poids Lourds (heavyweight)">Poids Lourds (heavyweight)</option>
             </select>
-            <!-- <label for="country">Pays</label>
-            <select name="country" id="country">
-                <option value="france">France</option>
-                <option value="italie">Italie</option>
-                <option value="algerie">Algérie</option>
-            </select> -->
             <label for="city">Ville</label>
             <select name="city" id="city">
                 <option value="paris">Paris</option>
                 <option value="milan">Milan</option>
                 <option value="Alger">Alger</option>
             </select>
-        </fieldset>
         <section>
-            <button type="submit">Cliquez ici pour envoyer</button>
+            <button type="submit" name="envoyer">Cliquez ici pour envoyer</button>
         </section>
+        </form>
+        <?php
+        include_once "./src/traitement.inc.php";
+        ?>
     </main>
     <footer>
         

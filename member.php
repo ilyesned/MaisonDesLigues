@@ -1,5 +1,6 @@
 <?php 
     include_once "./src/header.inc.php";
+    include_once "./src/connexion_bdd.inc.php";
 ?>
 <body>
     <header>
@@ -8,18 +9,41 @@
             <li><a href="fighters.php">Combattants</a></li>
             <li><a href="categorie.php">Divisions</a></li>
             <li><a href="contact.php">Contact</a></li>
-            <li><a href="connec.php">Connexion</a></li>
+            <li><a href="deconnexion.php">Deconnexion</a></li>
         </ul>
         <h1>Ultimate Fighting Championship</h1>
     </header>
     <main class="main">
         <section class="entete">
-            <h2>Entrez dans la cage avec le formulaire ci-dessous !</h2>
-            <br>
-            <p>Tous les mois profitez de toutes les nouveautés série et cinéma. A partir du mois prochain 
-                on vous propose tous les classiques du cinéma. Où que vous soyez. Tous les films en VO, VOST, 
-                VF et plus d'options
-            </p>
+        <?php
+            $_idUser = $_SESSION['id'];
+            $_req = $bdd->prepare("SELECT * FROM users WHERE id = :idUser");
+            $_req -> execute(array(
+                'idUser' => $_idUser,
+            ));
+            while ($_donnees = $_req->fetchAll()) {
+
+                foreach ($_donnees as $_user)
+                {
+                    print
+                    '<h2> Heureux de vous revoir '.$_user['firstname'].' '.$_user['names'].'</h2>' .
+                    '<table class="table_user">'
+                        .'<tr>'
+                            .'<th>Nom</th>'
+                            .'<th>Prénom</th>'
+                            .'<th>Email</th>'
+                            .'<th>Catégorie favorite</th>'
+                        .'</tr>'
+                        .'<tr>'
+                            .'<td>'.$_user['names'].'</td>'
+                            .'<td>'.$_user['firstname'].'</td>'
+                            .'<td>'.$_user['mail'].'</td>'
+                            .'<td>'.$_user['fav'].'</td>'
+                        .'</tr>'
+                    .'</table>';
+                }
+            }
+        ?>
         </section>
         <section class="film">
             <ul class="grid-picture-large">
@@ -96,33 +120,7 @@
         </section> -->
     </main>
     <footer>
-        <section class="footer_navigation">
-            <ul class="navigation_footer">
-                <li>
-                    <a href="https://www.facebook.com/UFC/" target="_blank">
-                        <img src="./asset/facebook.webp" alt="Facebook">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://twitter.com/ufc" target="_blank">
-                        <img src="./asset/twitter.png" alt="Twitter">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/ufc/" target="_blank">
-                        <img src="./asset/instagram.webp" alt="Instagram">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/user/UFC" target="_blank">
-                        <img src="./asset/youtube.webp" alt="Youtube">
-                    </a>
-                </li>
-                <li>
-
-                </li>
-            </ul>
-        </section>
+        <p>@ - Streaming - 2022</p>
     </footer>
     <div class="parent-modale" role="dialog">
         <figure class="modale">
@@ -137,6 +135,7 @@
                 </p>
                 <time>Years : </time>
             </figcaption>
+            <a href="">BUTTON</a>
         </figure>
     </div>
 </body>
