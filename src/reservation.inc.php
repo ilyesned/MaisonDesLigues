@@ -17,6 +17,5 @@
 
         $insert->closeCursor();
         header('Location: ./member.php');
-
     }
 ?>
