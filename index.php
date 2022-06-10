@@ -8,6 +8,7 @@
             <li><a href="fighters.php">Combattants</a></li>
             <li><a href="categorie.php">Divisions</a></li>
             <li><a href="contact.php">Contact</a></li>
+            <li><a href="form.php">Inscription</a></li>
             <li><a href="connec.php">Connexion</a></li>
         </ul>
         <h1>Ultimate Fighting Championship</h1>
@@ -89,11 +90,11 @@
                 </li>
             </ul>
         </section>
-        <!-- <section>
+        <section>
             <a href="form.php">
                 <button aria-label="">Cliquez ici pour Commencer</button>
             </a>
-        </section> -->
+        </section>
     </main>
     <footer>
         <section class="footer_navigation">

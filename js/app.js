@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", e => {
         let title = this.dataset.title;
         let desc = this.dataset.description;
         let dates = this.dataset.dates;
+        let sportId = this.dataset.id;
         modal.classList.add("modale-active"); /* ajouter la classe active */
         /* sélectionner les sélecteurs html*/
         document.querySelector(".modale img").setAttribute("src", image);
@@ -24,7 +25,14 @@ document.addEventListener("DOMContentLoaded", e => {
         document.querySelector(".modale .desc p").innerHTML = `<strong>Description : </strong>${desc}`;
         document.querySelector(".modale .desc time").innerText = `${dates}`;
         document.querySelector(".modale .desc time").setAttribute("datetime", dates);
+        document.querySelector(".reservation_button").setAttribute("href", `/categorie/${sportId}`);
         body.style = "overflow: hidden";
+        let btn = document.querySelector(".reservation_button");
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            // console.log(btn)
+            window.history.pushState(1, "", "./member.php?id_event=" + sportId);
+        });
     };
     for (rows of el) {
         rows.addEventListener("click", open_modal);
@@ -39,19 +47,5 @@ document.addEventListener("DOMContentLoaded", e => {
     });
 
 
-
-    function actualhour() {
-        let date = new Date();
-        let hours = date.getHours();
-        let minutes = date.getMinutes();
-        let seconds = date.getSeconds();
-        let day = date.getDay();
-        let month = date.getMonth();
-        let year = date.getFullYear();
-        let actualhour = `${hours}h${minutes}m${seconds}s`;
-        let actualday = `${day}/${month}/${year}`;
-        document.querySelector(".actualhour").innerText = actualhour;
-        document.querySelector(".actualday").innerText = actualday;
-    }
 
 });

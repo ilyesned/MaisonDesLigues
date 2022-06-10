@@ -1,14 +1,15 @@
-<?php 
+<?php
     include_once "./src/header.inc.php";
     include_once "./src/connexion_bdd.inc.php";
+    include_once "./src/reservation.inc.php";
 ?>
 <body>
     <header>
         <ul class="menu">
-            <li><a href="index.php">Acceuil</a></li>
+            <li><a href="member.php">Espace</a></li>
             <li><a href="fighters.php">Combattants</a></li>
             <li><a href="categorie.php">Divisions</a></li>
-            <li><a href="contact.php">Contact</a></li>
+            <li><a href="account.php">Compte</a></li>
             <li><a href="deconnexion.php">Deconnexion</a></li>
         </ul>
         <h1>Ultimate Fighting Championship</h1>
@@ -16,7 +17,7 @@
     <main class="main">
         <section class="entete">
         <?php
-            $_idUser = $_SESSION['id'];
+            isset($_SESSION['id']) ? $_idUser = $_SESSION['id'] : $id = 0;
             $_req = $bdd->prepare("SELECT * FROM users WHERE id = :idUser");
             $_req -> execute(array(
                 'idUser' => $_idUser,
@@ -49,78 +50,107 @@
             <ul class="grid-picture-large">
                 <li data-image="./asset/flyweight_champ.png"
                 data-title="Deiveson Figueiredo" 
-                data-description="Actuel champion de la catégorie poids mouches de l'UFC" 
-                data-dates="Début du reigne le 22 janvier 2022">
+                data-description="Actuel champion de la catégorie poids mouches de l'UFC. Prochain combat le " 
+                data-dates=": 22 janvier 2023"
+                data-id="1">
                     <figure>
                         <img src="./asset/flyweight_champ.png" alt="Deiveson Figueiredo">
                     </figure>
                 </li>
                 <li data-image="./asset/bantamweight_champ.png"
                 data-title="Aljamain Sterling" 
-                data-description="Actuel champion de la catégorie poids coqs de l'UFC" 
-                data-dates="Début du reigne le 6 mars 2021">
+                data-description="Actuel champion de la catégorie poids coqs de l'UFC. Prochain combat le " 
+                data-dates=": 6 mars 2023"
+                data-id="2">
                     <figure>
                         <img src="./asset/bantamweight_champ.png" alt="Aljamain Sterling">
                     </figure>
                 </li>
                 <li data-image="./asset/featherweight_champ.png"
                 data-title="Alexander Volkanovski" 
-                data-description="Actuel champion de la catégorie poids plumes de l'UFC" 
-                data-dates="Début du reigne le 14 décembre 2019">
+                data-description="Actuel champion de la catégorie poids plumes de l'UFC. Prochain combat le " 
+                data-dates=": 14 décembre 2023"
+                data-id="3">
                     <figure>
                         <img src="./asset/featherweight_champ.png" alt="Alexander Volkanovski">
                     </figure>
                 </li>
                 <li data-image="./asset/lightweight_champ.png"
                 data-title="Charles Oliveira" 
-                data-description="Actuel champion de la catégorie poids légers de l'UFC" 
-                data-dates="Début du reigne le 16 mai 2021">
+                data-description="Actuel champion de la catégorie poids légers de l'UFC. Prochain combat le " 
+                data-dates=": 16 mai 2023"
+                data-id="4">
                     <figure>
                         <img src="./asset/lightweight_champ.png" alt="Charles Oliveira">
                     </figure>
                 </li>
                 <li data-image="./asset/welteirweight_champ.png"
                 data-title="Kamaru Usman" 
-                data-description="Actuel champion de la catégorie poids mi-moyens de l'UFC" 
-                data-dates="Début du reigne le 2 mars 2019">
+                data-description="Actuel champion de la catégorie poids mi-moyens de l'UFC. Prochain combat le " 
+                data-dates=": 2 mars 2023"
+                data-id="5">
                     <figure>
                         <img src="./asset/welteirweight_champ.png" alt="Kamaru Usman">
                     </figure>
                 </li>
                 <li data-image="./asset/middleweight_champ.png"
                 data-title="Israël Adesanya" 
-                data-description="Actuel champion de la catégorie poids moyens de l'UFC" 
-                data-dates="Début du reigne le 5 octobre 2019">
+                data-description="Actuel champion de la catégorie poids moyens de l'UFC. Prochain combat le " 
+                data-dates=": 5 octobre 2023"
+                data-id="6">
                     <figure>
                         <img src="./asset/middleweight_champ.png" alt="Israël Adesanya">
                     </figure>
                 </li>
                 <li data-image="./asset/light-heavyweight_champ.png"
                 data-title="Glover Teixeira" 
-                data-description="Actuel champion de la catégorie poids mi-lourds de l'UFC" 
-                data-dates="Début du reigne le 30 octobre 2021">
+                data-description="Actuel champion de la catégorie poids mi-lourds de l'UFC. Prochain combat le " 
+                data-dates=": 30 octobre 2023"
+                data-id="7">
                     <figure>
                         <img src="./asset/light-heavyweight_champ.png" alt="Glover Teixeira">
                     </figure>
                 </li>
                 <li data-image="./asset/heavyweight_champ.png"
                 data-title="Francis Ngannou" 
-                data-description="Actuel champion de la catégorie poids lourds de l'UFC" 
-                data-dates="Début du reigne le 27 mars 2021">
+                data-description="Actuel champion de la catégorie poids lourds de l'UFC. Prochain combat le " 
+                data-dates=": 27 juin 2023"
+                data-id="8">
                     <figure>
                         <img src="./asset/heavyweight_champ.png" alt="Francis Ngannou">
                     </figure>
                 </li>
             </ul>
         </section>
-        <!-- <section>
-            <a href="form.php">
-                <button aria-label="">Cliquez ici pour Commencer</button>
-            </a>
-        </section> -->
     </main>
     <footer>
-        <p>@ - Streaming - 2022</p>
+        <section class="footer_navigation">
+            <ul class="navigation_footer">
+                <li>
+                    <a href="https://www.facebook.com/UFC/" target="_blank">
+                        <img src="./asset/facebook.webp" alt="Facebook">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/ufc" target="_blank">
+                        <img src="./asset/twitter.png" alt="Twitter">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/ufc/" target="_blank">
+                        <img src="./asset/instagram.webp" alt="Instagram">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/user/UFC" target="_blank">
+                        <img src="./asset/youtube.webp" alt="Youtube">
+                    </a>
+                </li>
+                <li>
+
+                </li>
+            </ul>
+        </section>
     </footer>
     <div class="parent-modale" role="dialog">
         <figure class="modale">
@@ -135,7 +165,7 @@
                 </p>
                 <time>Years : </time>
             </figcaption>
-            <a href="">BUTTON</a>
+                    <input class="reservation_button" type="submit" name="reservation" value="S'inscrire à ses prochains combats">
         </figure>
     </div>
 </body>
