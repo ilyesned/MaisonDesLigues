@@ -1,21 +1,31 @@
 <?php
-    include_once "./src/connexion_bdd.inc.php";
+    include_once "connexion_bdd.inc.php";
 
-    if(isset($_GET["id_combats"]) && isset($_SESSION["id"])){
+    if(isset($_POST['reservation'])){
 
-        $id_reservation = $_GET["id_combats"];
+        $id_reservation = $_GET["id_event"];
         $id_client = $_SESSION["id"];
         $_date = new DateTime();
-        $_date = $_date->format('Y-m-d H:i:s');
+        $_date = $_date->format('Y-m-d');
 
-        $insert = $bdd->prepare('INSERT INTO reservation (id_client, id_reservation, date_reservation) VALUES (:id_reservation, :id_client, :date_reservation)');
-        $insert->execute(array( 
-            'id_reservetation' => $id_reservation,
+        $_req = $bdd->prepare("SELECT * FROM reservation WHERE id_reservation = :id_reservation AND id_client = :id_client");
+        $_req->execute(array(
+            'id_reservation' => $id_reservation,
             'id_client' => $id_client,
-            'date_reservation' => $_date,
         ));
 
-        $insert->closeCursor();
-        header('Location: ./member.php');
-    }
+        if($_req->rowCount() == 0){
+            $_reqs = $bdd->prepare("INSERT INTO reservation(id_client, id_reservation, date_reservation) VALUES(?,?,?)");
+            $_reqs->execute(array(
+                $id_client,
+                $id_reservation,
+                $_date,
+            ));
+            $_reqs->closeCursor();
+        }
+        else{
+            echo "Vous avez déjà réservé cet événement";
+        }
+
+}
 ?>

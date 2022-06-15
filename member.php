@@ -2,6 +2,7 @@
     include_once "./src/header.inc.php";
     include_once "./src/connexion_bdd.inc.php";
     include_once "./src/reservation.inc.php";
+    include_once "./src/users_reservation.inc.php";
 ?>
 <body>
     <header>
@@ -44,6 +45,31 @@
                     .'</table>';
                 }
             }
+
+            print '<h2>Vos réservations</h2>'
+                .'<table class="table_user">'
+                    .'<tr>'
+                        .'<th>Combattant</th>'
+                        .'<th>Qui est-il </th>'
+                        .'<th>Date</th>'
+                        .'<th>Date de réservation</th></tr>';
+
+            foreach($reservation as $reservation){
+                
+                print
+                '<tr>'.
+                        '<td>'.$reservation['nom_combats'].'</td>'
+                        .'<td>'.$reservation['desc_combats'].'</td>'
+                        .'<td>'.$reservation['date_combats'].'</td>'
+                        .'<td>'.$reservation['date_reservation'].'</td>'
+                .'</tr>';
+                    
+            }
+            print '</table>';
+
+            
+            
+
         ?>
         </section>
         <section class="film">
@@ -165,7 +191,10 @@
                 </p>
                 <time>Years : </time>
             </figcaption>
-                    <input class="reservation_button" type="submit" name="reservation" value="S'inscrire à ses prochains combats">
+            <form action="#" method="POST">
+                <input class="reservation_button" type="submit" name="reservation" value="S'inscrire à ses prochains combats">
+                            
+            </form>
         </figure>
     </div>
 </body>

@@ -1,6 +1,6 @@
 <?php
       session_start();
-      /* try {
+      try {
             $_pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
             $bdd = new PDO('mysql:host=localhost;
                             dbname=inedjai', 
@@ -9,9 +9,9 @@
 
       } catch(PDOException $e) {
             die('Erreur de BDD'.$e->getMessage());
-      } */
+      }
 
-      try {
+      /* try {
             $_pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
             $bdd = new PDO('mysql:host=172.190.1.52;
                             dbname=inedjai', 
@@ -20,5 +20,5 @@
 
       } catch(PDOException $e) {
             die('Erreur de BDD'.$e->getMessage());
-      }
+      } */
 ?>

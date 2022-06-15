@@ -28,10 +28,9 @@ document.addEventListener("DOMContentLoaded", e => {
         document.querySelector(".reservation_button").setAttribute("href", `/categorie/${sportId}`);
         body.style = "overflow: hidden";
         let btn = document.querySelector(".reservation_button");
-        btn.addEventListener("click", (e) => {
-            e.preventDefault();
-            // console.log(btn)
-            window.history.pushState(1, "", "./member.php?id_event=" + sportId);
+        btn.addEventListener("click", () => {
+/*             e.preventDefault();
+ */            window.history.pushState(1, "", "./member.php?id_event=" + sportId);
         });
     };
     for (rows of el) {
