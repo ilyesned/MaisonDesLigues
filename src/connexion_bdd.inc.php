@@ -11,6 +11,8 @@
             die('Erreur de BDD'.$e->getMessage());
       } */
 
+      session_start();
+
       try {
             $_pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
             $bdd = new PDO('mysql:host=192.190.190.52;
