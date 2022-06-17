@@ -12,8 +12,15 @@
 </head>
 <body>
     <header>
-        <a href="index.php"><img class="logo" src="./asset/8d6074851b4ded8fe9fc46e294bbff5f - Copie.png" alt="bouton-acceuil"></a>
-        <h1>Films series TV et bien plus en illimite</h1>
+        <ul class="menu">
+            <li><a href="index.php">Acceuil</a></li>
+            <li><a href="fighters.php">Combattants</a></li>
+            <li><a href="categorie.php">Divisions</a></li>
+            <li><a href="contact.php">Contact</a></li>
+            <li><a href="form.php">Inscription</a></li>
+            <li><a href="connec.php">Connexion</a></li>
+        </ul>
+        <h1>Ultimate Fighting Championship</h1>
     </header>
     <main>
         <section class="vedette">
