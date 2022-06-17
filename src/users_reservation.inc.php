@@ -1,7 +1,5 @@
 <?php
 
-    include_once "./connexion_bdd.inc.php";
-
     //show reservation 
     $_id = $_SESSION["id"];
     $reservation = $bdd->prepare("SELECT * FROM reservation INNER JOIN combats ON reservation.id_reservation=combats.id_combats WHERE id_client = :id");
