@@ -131,3 +131,21 @@ section button{
     background-color: var(--color-backBox);
     width: 50%;
 }
+
+header{
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--color-backBox);
+    margin-bottom: 5rem;
+}
+
+header h1{
+    font-family: "roadRage";
+    font-size: 6rem;
+    color: var(--color-font);
+    text-align: center;
+    content: "";
+    position: relative;
+}
