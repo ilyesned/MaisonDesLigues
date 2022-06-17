@@ -22,8 +22,6 @@
                         } else {
                             // Insert data into data base
                             $sql = $bdd->prepare("INSERT INTO users (names, firstname, mail, passwords, phone, fav, city) VALUES (?, ?, ?, ?, ?, ?, ?)");
-                            
-                            
                             $sql->execute(
                                 array(htmlentities($nom), 
                                 htmlentities($prenom), 
