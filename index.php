@@ -17,9 +17,10 @@
         <section class="entete">
             <h2>Entrez dans la cage avec le formulaire ci-dessous !</h2>
             <br>
-            <p>Tous les mois profitez de toutes les nouveautés série et cinéma. A partir du mois prochain 
-                on vous propose tous les classiques du cinéma. Où que vous soyez. Tous les films en VO, VOST, 
-                VF et plus d'options
+            <p>Entrez dans la cage avec le formulaire ci-dessous ! Chaque semaine retrouver des combats différents, 
+                des combattants différents, des divisions différentes. Vous pourrez ainsi visualiser la 
+                cage et supporter vos combattants et divisions préféré.</p>
+
             </p>
         </section>
         <section class="film">

@@ -1,4 +1,7 @@
 <?php
+    //add reservation
+    
+
     include_once "connexion_bdd.inc.php";
 
     if(isset($_POST['reservation'])){
