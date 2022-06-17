@@ -36,18 +36,23 @@ include_once './src/connexion_bdd.inc.php';
                         ));
                         while($donnees = $req->fetchAll()){
                             foreach($donnees as $fighter){
-                                print
-                                '<table class="table_user">'
-                                    .'<tr>'
-                                        .'<th>Le mot apparait chez</th>'
-                                        .'<th>Il apparait en tout</th>'
-                                    .'</tr>'
-                                    .'<tr>'
-                                        .'<td>'.$fighter['nom_combats'].'</td>'
-                                        //count number of time the word appears in all the description
-                                        .'<td>'.substr_count($fighter['desc_combats'], $search).'</td>'
-                                    .'</tr>'
-                                .'</table>';
+                                //verify if the word exist in the description of the fighter
+                                if(strpos($fighter['desc_combats'], $search) !== false){
+                                    //message that say that the word does not exist in the description
+                                    print '<p>Malheuresement on ne trouve pas ce que vous recherchez</p>';
+                                }else{
+                                    print
+                                        '<table class="table_user">'
+                                            .'<tr>'
+                                                .'<th>Le mot apparait chez</th>'
+                                                .'<th>Il apparait en tout</th>'
+                                            .'</tr>'
+                                            .'<tr>'
+                                                .'<td>'.$fighter['nom_combats'].'</td>'
+                                                .'<td>'.substr_count($fighter['desc_combats'], $search).'</td>'
+                                            .'</tr>'
+                                        .'</table>';
+                                }
                             }
                         }
                     }
