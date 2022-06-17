@@ -1,7 +1,8 @@
 <?php
     include_once 'connexion_bdd.inc.php';
 
-    $users = $bdd->prepare('SELECT * FROM `users` WHERE mail = ?');
+    if(isset($_POST['envoyer'])){
+        $users = $bdd->prepare('SELECT * FROM `users` WHERE mail = ?');
                 $users->execute(array($_POST['email']));
                 if ($users->rowCount() == 0) {
                     if (isset($_POST['envoyer'])) {
@@ -37,4 +38,6 @@
                 } else {
                     echo "Ce mail existe déjà";
                 }
+    }
+    
 ?>
