@@ -18,8 +18,8 @@
     <main class="main">
         <section class="entete">
         <?php
-            isset($_SESSION['id']) ? $_idUser = $_SESSION['id'] : $id = 0;
-            $_req = $bdd->prepare("SELECT * FROM users WHERE id = :idUser");
+            if(isset($_SESSION['id']) ? $_idUser = $_SESSION['id'] : $id = 0){
+                $_req = $bdd->prepare("SELECT * FROM users WHERE id = :idUser");
             $_req -> execute(array(
                 'idUser' => $_idUser,
             ));
@@ -66,6 +66,8 @@
                     
             }
             print '</table>';
+            };
+            
 
             
             
