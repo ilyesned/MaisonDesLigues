@@ -107,3 +107,27 @@ section button{
     margin: 1rem auto;
     background-color: var(--color-backBox);
 }
+
+.menu{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-gap: 1rem;
+    justify-content: center;
+    padding: 1rem;
+    background-color: var(--color-backBox);
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+.menu li{
+    list-style: none;
+    display: grid;
+    grid-gap: 0.5rem;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--color-font);
+    background-color: var(--color-backBox);
+    width: 50%;
+}
