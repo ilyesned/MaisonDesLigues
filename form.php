@@ -56,10 +56,18 @@
                 <option value="Poids Lourds (heavyweight)">Poids Lourds (heavyweight)</option>
             </select>
             <label for="city">Ville</label>
+            <?php
+                // Afficher les villes de la base de données
+                $city = $bdd->prepare("SELECT nomville FROM ville");
+                $city->execute();
+                $city = $city->fetchAll();
+            ?>
             <select name="city" id="city">
-                <option value="paris">Paris</option>
-                <option value="milan">Milan</option>
-                <option value="Alger">Alger</option>
+                <?php
+                    foreach($city as $city){
+                        echo "<option value='".$city['nomville']."'>".$city['nomville']."</option>";
+                    }
+                ?>
             </select>
         <section>
             <button type="submit" name="envoyer">Cliquez ici pour envoyer</button>

@@ -12,6 +12,7 @@
             <li><a href="categorie.php">Divisions</a></li>
             <li><a href="account.php">Compte</a></li>
             <li><a href="deconnexion.php">Deconnexion</a></li>
+            <li><a href="recherche.php">Recherche</a></li>
         </ul>
         <h1>Ultimate Fighting Championship</h1>
     </header>
